@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "icon": "diversity_1",
+    "name": "Getting Started",
+    "intro": "Start using our Service easily with our actionable tips."
+  },
+  {
+    "id": 2,
+    "icon": "check_box",
+    "name": "How-to Articles",
+    "intro": "Check out ready matatu articles that  tailors to your needs."
+  },
+  {
+    "id": 3,
+    "icon": "tv_signin",
+    "name": "Billing and Account",
+    "intro": "Adjust your subscription and limits to your liking."
+  },
+  {
+    "id": 6,
+    "icon": "feed",
+    "name": "Social Media",
+    "intro": "Schedule, post, and track performance across all key social platforms."
+  },
+  {
+    "id": 8,
+    "icon": "chart_data",
+    "name": "Trends",
+    "intro": "Analyze the matatu market, benchmark against competitors,and follow emerging trends."
+  },
+  {
+    "id": 9,
+    "icon": "manage_accounts",
+    "name": "Management",
+    "intro": "Keep all your payments plans and activities under control. Automate reporting."
+  }
+]
