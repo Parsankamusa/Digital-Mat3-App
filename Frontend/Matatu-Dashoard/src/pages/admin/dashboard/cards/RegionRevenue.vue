@@ -45,13 +45,13 @@ const data = [
     fareMonth: ' 2400',
   },
   {
-    name: 'Manchester',
+    name: 'Lopha',
     fareToday: '80',
     fareWeek: ' 560',
     fareMonth: ' 2400',
   },
   {
-    name: 'Manchester',
+    name: 'Naekana sacco',
     fareToday: '80',
     fareWeek: ' 560',
     fareMonth: ' 2400',
@@ -63,16 +63,16 @@ const data = [
     fareMonth: '800,000',
   },
   {
-    name: 'Manchester',
+    name: 'Supermetro',
     fareToday: '80',
     fareWeek: ' 560',
     fareMonth: ' 2400'
   },
   {
-    name: 'Manchester',
-    fareToday: '80',
-    fareWeek: ' 560',
-    fareMonth: ' 2400',
+    name: 'kitui express',
+    fareToday: '800',
+    fareWeek: ' 5600',
+    fareMonth: ' 24000',
   },
 ]
 

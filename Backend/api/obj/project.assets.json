@@ -4596,11 +4596,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\musa\\Desktop\\digital-mat3-API\\matatuapp\\Backend\\api\\api.csproj",
+      "projectUniqueName": "C:\\Users\\musa\\Documents\\Digital-Mat3-App\\Backend\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "C:\\Users\\musa\\Desktop\\digital-mat3-API\\matatuapp\\Backend\\api\\api.csproj",
+      "projectPath": "C:\\Users\\musa\\Documents\\Digital-Mat3-App\\Backend\\api\\api.csproj",
       "packagesPath": "C:\\Users\\musa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\musa\\Desktop\\digital-mat3-API\\matatuapp\\Backend\\api\\obj\\",
+      "outputPath": "C:\\Users\\musa\\Documents\\Digital-Mat3-App\\Backend\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\musa\\AppData\\Roaming\\NuGet\\NuGet.Config",

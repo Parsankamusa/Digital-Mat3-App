@@ -11,8 +11,8 @@ const getUsermatatus = (userId: number | string) => {
     .filter((matatu) => matatu.Capacity.includes(Number(userId)))
     .map((Matatu) => ({
       ...Matatu,
-      matatu_owner: users.find((user) => user.id === matatu.matatu_owner)!,
-      Capcity: Matatu.Capcity.map((userId) => users.find((user) => user.id === userId)!),
+      matatu_owner: users.find((user) => user.id === Matatu.matatu_owner)!,
+      Capacity: Matatu.Capacity.map((userId) => users.find((user) => user.id === userId)!),
       status: Matatu.status as Matatu['status'],
     }))
 }

@@ -11,7 +11,7 @@ import { getmatatus } from '../../../../data/pages/matatus'
 
 const columns = defineVaDataTableColumns([
   { label: 'Name', key: 'matatu_name', sortable: true },
-  { label: 'Status', key: 'status', sortable: true },
+  { label: 'Street', key: 'Street', sortable: true },
   { label: 'Capacity', key: 'Capacity', sortable: true },
 ])
 
