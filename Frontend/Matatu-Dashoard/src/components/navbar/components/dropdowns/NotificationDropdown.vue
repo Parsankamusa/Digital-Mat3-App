@@ -1,3 +1,12 @@
+/**
+ * The `NotificationDropdown` component is a dropdown menu that displays a list of notifications. It is used in the navbar of the Matatu Dashboard application.
+ *
+ * The dropdown is triggered by clicking on a button that displays a badge with the number of unread notifications. When the dropdown is opened, it displays a list of notifications with their message, icon, and the relative time since the notification was created.
+ *
+ * The component uses the `VaDropdown`, `VaButton`, `VaBadge`, `VaIconNotification`, `VaList`, `VaListItem`, and `VaListSeparator` components from the Vuestic UI library.
+ *
+ * The component also includes functionality to toggle between displaying a limited number of notifications or all notifications.
+ */
 <template>
   <VaDropdown :offset="[13, 0]" class="notification-dropdown" stick-to-edges :close-on-content-click="false">
     <template #anchor>

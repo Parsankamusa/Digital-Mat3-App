@@ -10,10 +10,10 @@ defineProps({
 })
 
 const badgeColorMap: Record<Matatu['status'], string> = {
-  'in progress': 'primary',
-  archived: 'secondary',
-  completed: 'success',
-  important: 'warning',
+  onservice : 'primary',
+  coaches: 'secondary',
+  minibus: 'success',
+  bus: 'warning',
 }
 </script>
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
-import { Matatu } from '../types'
-import MatatuStatusBadge from '../components/MatatuStatusBadge.vue'
+import type { Matatu } from '../types'
 
 defineProps({
   Matatus: {

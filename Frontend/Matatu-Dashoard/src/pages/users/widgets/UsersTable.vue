@@ -5,17 +5,25 @@ import UserAvatar from './UserAvatar.vue'
 import { PropType, computed, toRef } from 'vue'
 import { Pagination, Sorting } from '../../../data/pages/users'
 import { useVModel } from '@vueuse/core'
-import { Project } from '../../projects/types'
+import { Matatu } from '../../projects/types'
 
 const columns = defineVaDataTableColumns([
   { label: 'Full Name', key: 'fullname', sortable: true },
   { label: 'Email', key: 'email', sortable: true },
   { label: 'Username', key: 'username', sortable: true },
   { label: 'Role', key: 'role', sortable: true },
-  { label: 'Projects', key: 'projects', sortable: true },
+  { label: 'Matatus', key: 'Matatus', sortable: true },
   { label: ' ', key: 'actions', align: 'right' },
 ])
 
+/**
+ * Defines the props for the UsersTable component.
+ * @property {User[]} users - The array of users to display in the table.
+ * @property {boolean} loading - Indicates whether the table is currently loading data.
+ * @property {Pagination} pagination - The pagination information for the table.
+ * @property {Sorting['sortBy']} sortBy - The current sort column for the table.
+ * @property {Sorting['sortingOrder']} sortingOrder - The current sort order for the table.
+ */
 const props = defineProps({
   users: {
     type: Array as PropType<User[]>,
@@ -63,22 +71,32 @@ const onUserDelete = async (user: User) => {
   }
 }
 
-const formatProjectNames = (projects: Project[]) => {
-  if (projects.length === 0) return 'No projects'
-  if (projects.length <= 2) {
-    return projects.map((project) => project.project_name).join(', ')
-  }
+/**
+ * Formats the names of Matatus in a user's Matatus list.
+ *
+ * If the user has no Matatus, returns 'No Matatus'.
+ * If the user has 1 or 2 Matatus, returns a comma-separated list of their names.
+ * If the user has more than 2 Matatus, returns the names of the first 2 Matatus, followed by ' + X more', where X is the number of remaining Matatus.
+ *
+ * @param {Matatu[]} Matatus - The list of Matatus associated with the user.
+ * @returns {string} The formatted string of Matatu names.
+ */
+// const formatMatatuNames = (matatus: Matatu[]) => {
+//   if (matatus.length === 0) return 'No Matatus'
+//   if (matatus.length <= 2) {
+//     return matatus.map((matatu) => matatu.matatu_name).join(', ')
+//   }
 
-  return (
-    projects
-      .slice(0, 2)
-      .map((project) => project.project_name)
-      .join(', ') +
-    ' + ' +
-    (projects.length - 2) +
-    ' more'
-  )
-}
+//   return (
+//     matatus
+//       .slice(0, 2)
+//       .map((matatu) => matatu.matatu_name)
+//       .join(', ') +
+//     ' + ' +
+//     (matatus.length - 2) +
+//     ' more'
+//   )
+// }
 </script>
 
 <template>
@@ -112,9 +130,9 @@ const formatProjectNames = (projects: Project[]) => {
       <VaBadge :text="rowData.role" :color="roleColors[rowData.role as UserRole]" />
     </template>
 
-    <template #cell(projects)="{ rowData }">
+    <template #cell(matatus)="{ rowData }">
       <div class="ellipsis max-w-[300px] lg:max-w-[450px]">
-        {{ formatProjectNames(rowData.projects) }}
+        <!-- {{ formatMatatuNames(rowData.Matatus) }} -->
       </div>
     </template>
 

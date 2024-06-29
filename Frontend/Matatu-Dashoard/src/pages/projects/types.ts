@@ -1,11 +1,12 @@
 import { User } from '../users/types'
 
+
 export type Matatu = {
   id: number
   matatu_name: string
   matatu_owner: Omit<User, 'matatus'>
   Capacity: Omit<User, 'matatus'>[]
-  status: 'minibus' | 'bus' | 'coaches' | 'on service'
+  status: 'minibus' | 'bus' | 'coaches' | 'onservice'
   creation_date: string
 }
 
