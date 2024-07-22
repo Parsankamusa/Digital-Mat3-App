@@ -82,13 +82,13 @@ export default {
         icon: 'quiz',
       },
     },
-    {
-      name: '404',
-      displayName: 'menu.404',
-      meta: {
-        icon: 'vuestic-iconset-files',
-      },
-    },
+    // {
+    //   name: '404',
+    //   displayName: 'menu.404',
+    //   meta: {
+    //     icon: 'vuestic-iconset-files',
+    //   },
+    // },
     {
       name: 'preferences',
       displayName: 'menu.preferences',

@@ -18,7 +18,7 @@ const fetchPaymentCards = async () => {
     },
     {
       id: '2',
-      name: 'Online shopping',
+      name: 'user card',
       isPrimary: false,
       paymentSystem: PaymentSystemType.MasterCard,
       cardNumberMasked: '****8921',

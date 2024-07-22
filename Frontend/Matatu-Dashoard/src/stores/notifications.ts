@@ -5,11 +5,11 @@ export const useNotificationsStore = defineStore('notifications', {
     return {
       notifications: {
         searchingForAJob: {
-          name: 'Searching for a job',
+          name: 'Searching for a matatu route',
           isEnabled: true,
         },
         hiringSomeone: {
-          name: 'Hiring someone',
+          name: 'Searching for a matatu street',
           isEnabled: false,
         },
         connectingWithOthers: {
@@ -33,7 +33,7 @@ export const useNotificationsStore = defineStore('notifications', {
           isEnabled: true,
         },
         attendingEvents: {
-          name: 'Attending events',
+          name: 'attending avents I need matatu details ',
           isEnabled: true,
         },
         newsAndReports: {
