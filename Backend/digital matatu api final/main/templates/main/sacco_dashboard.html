@@ -1,0 +1,46 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extend_nav %} 
+<ul class="sidenav">
+  <li><a class="active" href="{% url 'main:dashboard' %}">Matatu Dashboard</a></li>
+  <li><a href="{% url 'main:route' %}">Home</a></li>
+</ul>
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <h2>Saccos</h2>
+        <ul>
+            {% for sacco in saccos %}
+                <li>{{ sacco.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card">
+        <h2>Matatus</h2>
+        <ul>
+            {% for matatu in matatus %}
+                <li>{{ matatu.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card">
+        <h2>Routes</h2>
+        <ul>
+            {% for route in routes %}
+                <li>{{ route.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="card">
+        <h2>Streets</h2>
+        <ul>
+            {% for street in streets %}
+                <li>{{ street.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

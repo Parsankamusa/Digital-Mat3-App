@@ -5,7 +5,7 @@ import { usematatus} from './composables/usematatu'
 import MatatuCards from './widgets/MatatuCards.vue';
 import MatatuTable from './widgets/MatatusTable.vue'
 import EditMatatuForm from './widgets/EditMatatuForm.vue'
-import { Matatu } from './types'
+import { EmptyMatatu} from './types'
 import { useModal, useToast } from 'vuestic-ui'
 
 const doShowAsCards = useLocalStorage('Matatus-view', true)

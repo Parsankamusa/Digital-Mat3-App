@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
-import type { Matatu } from '../types'
+import type {EmptyMatatu} from '../types'
 
 defineProps({
   Matatus: {

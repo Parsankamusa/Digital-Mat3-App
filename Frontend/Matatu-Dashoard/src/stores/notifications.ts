@@ -8,18 +8,6 @@ export const useNotificationsStore = defineStore('notifications', {
           name: 'Searching for a matatu route',
           isEnabled: true,
         },
-        hiringSomeone: {
-          name: 'Searching for a matatu street',
-          isEnabled: false,
-        },
-        connectingWithOthers: {
-          name: 'Connecting with others',
-          isEnabled: true,
-        },
-        postingAndCommenting: {
-          name: 'Posting and commenting',
-          isEnabled: true,
-        },
         messaging: {
           name: 'Messaging',
           isEnabled: true,
@@ -30,10 +18,6 @@ export const useNotificationsStore = defineStore('notifications', {
         },
         pages: {
           name: 'Pages',
-          isEnabled: true,
-        },
-        attendingEvents: {
-          name: 'attending avents I need matatu details ',
           isEnabled: true,
         },
         newsAndReports: {

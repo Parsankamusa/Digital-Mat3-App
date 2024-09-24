@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+
+<script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
+
+{% endblock %}
+
+{% block extend_nav %} 
+
+<ul class="sidenav">
+  <li><a class="active" href="{% url 'main:route' %}">matatu Maps</a></li>
+
+
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+
+{% block extend_footer %}
+
+
+<script type="text/javascript">
+
+    var google_api_key = "{{google_api_key|safe}}";
+
+  </script>
+
+  <script src="{% static 'google_places.js' %}"></script>
+
+
+{% endblock %}

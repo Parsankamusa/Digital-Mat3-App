@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PropType, computed } from 'vue'
 import { defineVaDataTableColumns } from 'vuestic-ui'
-import { Matatu } from '../types'
+import { EmptyMatatu} from '../types'
 import UserAvatar from '../../users/widgets/UserAvatar.vue'
 import MatatuStatusBadge from '../components/MatatuStatusBadge.vue'
 import { Sorting, Pagination } from '../../../data/pages/matatus'

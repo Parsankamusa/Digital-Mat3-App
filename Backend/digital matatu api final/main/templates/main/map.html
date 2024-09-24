@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map View</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    {{ stations|json_script:"stations_json"}}
+    <script>
+        var map = L.map('map').setView([41.5055, -72.700], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+          
+        let stations = JSON.parse(document.getElementById("stations_json").textContent);
+
+        stations.forEach(station => {
+            L.marker([station.latitude, station.longitude]).addTo(map);
+        });
+
+        map.on('click', (event) => {
+            let lat = event.latlng.lat;
+            let lng = event.latlng.lng;
+            L.marker([lat, lng]).addTo(map);
+            fetch(`/get-nearest-station?latitude=${lat}&longitude=${lng}`)
+                .then(response => response.json())
+                .then(result => {
+                    station_coordinates = result.coordinates;
+                    user_coordinates = [lat, lng];
+                    let polyline = L.polyline([user_coordinates, station_coordinates]).addTo(map);
+
+                    var popup = L.popup()
+                        .setLatLng([lat, lng])
+                        .setContent(`<p>Nearest bus station is ${result.distance}</p>`)
+                        .openOn(map);
+                });
+        });
+    </script>
+</body>
+</html>

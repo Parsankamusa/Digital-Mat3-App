@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digital matatu Api</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="{% static 'script.js' %}"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+          <a href="{% url 'main:route' %}">
+            <div class="logo">Digital matatu Api</div>
+        </a>
+            
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'main:map' %}">maps</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-text">
+        <h1>The leading family safety and location-sharing app.</h1>
+        <p>Protect yourself with advanced driving, digital, and location safety features. Choose the plan that fits your family’s size and life stage.</p>
+        <a href="{% url 'main:search' %}">
+          <button>Search for free</button>
+      </a>
+  
+
+        {% comment %} <div class="app-buttons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Google_Play_Store_badge_EN.svg/2880px-Google_Play_Store_badge_EN.svg.png" alt="Google Play Store">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Download_on_the_App_Store_Badge_US-UK_blk.svg/2560px-Download_on_the_App_Store_Badge_US-UK_blk.svg.png" alt="Apple App Store">
+        </div> {% endcomment %}
+    </div>
+
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/300x600.png?text=App+Preview" alt="App Preview">
+    </div>
+</section>
+<section class="slider-section">
+  <div class="slider-text">
+      <h2>LOCATION HISTORY</h2>
+      <h1>Retrace your  past routes in a snap.</h1>
+      <a href="{% url 'main:map' %}">
+        <button>See all Location features &rarr;</button>
+    </a>
+
+      <div class="slider-controls">
+          <button id="prevSlide">&lt;</button>
+          <span id="slideIndicator">01</span> / 04
+          <button id="nextSlide">&gt;</button>
+      </div>
+  </div>
+
+  <div class="slider-image">
+      <img src="/mnt/data/direction section.png" alt="Slide 1" class="visible" id="slide1">
+      <img src="/mnt/data/SLIDE 2.png" alt="Slide 2" class="hidden" id="slide2">
+  </div>
+</section>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Key Features</h2>
+        <div class="features-container">
+            <div class="feature-item">
+                <h3>Location Sharing</h3>
+                <p>Always know where your family is with real-time location updates.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Driver Safety</h3>
+                <p>Get alerts on driving habits and ensure everyone's safety on the road.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Crash Detection</h3>
+                <p>Instant help in the event of a crash, with emergency support.</p>
+            </div>
+        </div>
+    </section>
+    <section class="real-life-stories">
+      <h1>Real Life Stories</h1>
+      <div class="story-container">
+        <div class="story-item">
+          <img src="/path/to/story-image1.jpg" alt="Story 1">
+          <h3>Keeping Families Connected</h3>
+          <p>digial matatu api helps me stay connected with my loved ones, even when we're apart. It gives me peace of mind knowing I can check on them anytime.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="story-item">
+          <img src="/path/to/story-image2.jpg" alt="Story 2">
+          <h3>Navigating Busy Schedules</h3>
+          <p>With digial matatu api, I can easily coordinate with my family and never miss a beat. It's a lifesaver when we're all running in different directions.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="story-item">
+          <img src="/path/to/story-image3.jpg" alt="Story 3">
+          <h3>Staying Safe on the Road</h3>
+          <p>digial matatu api has been a game-changer for me. It helps me keep track of my family's driving habits and provides valuable insights to improve our safety.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="story-item">
+          <img src="/path/to/story-image4.jpg" alt="Story 4">
+          <h3>Bringing Families Together</h3>
+          <p>digial matatu api has helped strengthen the bond with my family. We can easily stay connected and share moments, even when we're miles apart.</p>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="prev-button">Previous</button>
+        <button class="next-button">Next</button>
+      </div>
+    </section>
+  
+    <section class="testimonials">
+      <h2>Loved by 66 million members and counting.</h2>
+      <div class="testimonial-container">
+        <div>
+          <img src="/path/to/avatar1.jpg" alt="Jessup">
+          <h3>Jessup</h3>
+          <p>I use digial matatu apibecause it lets me know when my family has left or gotten to school. It's important I know when my sisters and mom get home safely.</p>
+        </div>
+        <div>
+          <img src="/path/to/avatar2.jpg" alt="Kris O.">
+          <h3>Kris O.</h3>
+          <p>The digial matatu api app made it possible for me to get directions to him quickly without having to give an address and me stopping to put it in. I was able to get to my fiancé because of Life360.</p>
+        </div>
+        <div>
+          <img src="/path/to/avatar3.jpg" alt="Wes J.">
+          <h3>Wes J.</h3>
+          <p>We fully trust our kids, but we also want to protect them. This app is truly proactive when it comes to safety. This is the first time in the 20+ years of using a tech service that it actually worked better than advertised.</p>
+        </div>
+        <div>
+          <img src="/path/to/avatar4.jpg" alt="Brandi S.">
+          <h3>Brandi S.</h3>
+          <p>I am so thankful I could use digial matatu api to prove that I was being a good driver. I don't know what I would have done without it because I could barely remember what happened in the first place!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 matatu api. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+  <script>
+      const slides = [
+          document.getElementById('slide1'),
+          document.getElementById('slide2')
+      ];
+      
+      let currentSlide = 0;
+
+      document.getElementById('prevSlide').addEventListener('click', () => {
+          slides[currentSlide].classList.remove('visible');
+          slides[currentSlide].classList.add('hidden');
+          currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+          slides[currentSlide].classList.remove('hidden');
+          slides[currentSlide].classList.add('visible');
+          updateIndicator();
+      });
+
+      document.getElementById('nextSlide').addEventListener('click', () => {
+          slides[currentSlide].classList.remove('visible');
+          slides[currentSlide].classList.add('hidden');
+          currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+          slides[currentSlide].classList.remove('hidden');
+          slides[currentSlide].classList.add('visible');
+          updateIndicator();
+      });
+
+      function updateIndicator() {
+          document.getElementById('slideIndicator').textContent = `0${currentSlide + 1}`;
+      }
+
+      // Add your own JavaScript code here to handle the "Real Life Stories" carousel
+const prevButton = document.querySelector('.prev-button');
+const nextButton = document.querySelector('.next-button');
+const storyContainer = document.querySelector('.story-container');
+
+let currentIndex = 0;
+
+function showStories() {
+  storyContainer.style.transform = `translateX(-${currentIndex * 300}px)`;
+}
+
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showStories();
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  if (currentIndex < storyContainer.children.length - 1) {
+    currentIndex++;
+    showStories();
+  }
+});
+  </script>
+</body>
+</html>

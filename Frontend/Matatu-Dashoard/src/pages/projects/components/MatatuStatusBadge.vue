@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
-import { Matatu } from '../types'
+import { EmptyMatatu} from '../types'
 
 defineProps({
   status: {

@@ -1,0 +1,83 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ <link rel="stylesheet" href="{% static 'main.css' %}">
+ {% block extend_head %}
+ {% endblock %}
+</head>
+{% block extend_nav %} 
+<header>
+    <nav class="navbar">
+        <nav class="navbar">
+            <a href="{% url 'main:route' %}">
+              <div class="logo">Digital matatu Api</div>
+          </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'main:map' %}">maps</a></li>
+            
+        </ul>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="search-bar">
+        <form class="form-inline" method="POST" action="{% url 'main:search' %}">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Enter Search" aria-label="Enter Search" name="search_query" required>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="search-results">
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        {% if saccos %}
+            <h2>Saccos</h2>
+            <ul>
+                {% for sacco in saccos %}
+                    <li>{{ sacco.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if matatus %}
+            <h2>Matatus</h2>
+            <ul>
+                {% for matatu in matatus %}
+                    <li>{{ matatu.name }} - Fare: {{ matatu.fare }} - Route: {{ matatu.route.name }} - Sacco: {{ matatu.sacco.name }}  - Time: {{ matatu.time_it_take }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if routes %}
+            <h2>Routes</h2>
+            <ul>
+                {% for route in routes %}
+                    <li>{{ route.name }} - Fare: {{ route.fare }} - Matatu: {{ route.matatu.name }} - Sacco: {{ route.matatu.sacco.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if streets %}
+            <h2>Streets</h2>
+            <ul>
+                {% for street in streets %}
+                    <li>{{ street.name }} - Sacco: {{ street.sacco.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
