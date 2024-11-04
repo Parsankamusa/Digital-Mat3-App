@@ -1,4 +1,4 @@
-# did_django_google_maps_api
+# django_google_maps_api
 Django project that uses Googles APIs to auto populate fields, display maps and routes
 
 1) cd to development directory
@@ -15,5 +15,5 @@ GOOGLE_API_KEY = "XXX"
 7) python manage.py makemigrations
 8) python manage.py migrate
 9) python manage.py runserver
-10) https://localhost:8000 - Bob's your uncle!! 
+10) https://localhost:8000 
 
