@@ -1,218 +1,321 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Digital matatu Api</title>
-    <link rel="stylesheet" href="{% static 'base.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="{% static 'script.js' %}"></script>
+    <title>Digital Matatu API</title>
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="{% static 'js/base.js' %}"></script>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar">
-          <a href="{% url 'main:route' %}">
-            <div class="logo">Digital matatu Api</div>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <a href="{% url 'main:route' %}" style="text-decoration: none;">
+            <div class="logo">
+                <i class="fas fa-bus"></i> Digital Matatu API
+            </div>
         </a>
-            
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="{% url 'main:map' %}">maps</a></li>
-                
-            </ul>
-        </nav>
-    </header>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-text">
-        <h1>The leading family safety and location-sharing app.</h1>
-        <p>Protect yourself with advanced driving, digital, and location safety features. Choose the plan that fits your family’s size and life stage.</p>
-        <a href="{% url 'main:search' %}">
-          <button>Search for free</button>
-      </a>
-  
 
-        {% comment %} <div class="app-buttons">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Google_Play_Store_badge_EN.svg/2880px-Google_Play_Store_badge_EN.svg.png" alt="Google Play Store">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Download_on_the_App_Store_Badge_US-UK_blk.svg/2560px-Download_on_the_App_Store_Badge_US-UK_blk.svg.png" alt="Apple App Store">
-        </div> {% endcomment %}
+        <ul class="nav-links">
+            <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="{% url 'main:map' %}"><i class="fas fa-map-marked-alt"></i> Maps</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section with Animated Navigation Background -->
+<section class="hero-section">
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <div class="map-grid"></div>
+
+        <!-- Route Lines -->
+        <div class="route route-1"></div>
+        <div class="route route-2"></div>
+        <div class="route route-3"></div>
+        <div class="route route-4"></div>
+
+        <!-- Moving Vehicles -->
+        <div class="vehicle vehicle-1"><i class="fas fa-bus"></i></div>
+        <div class="vehicle vehicle-2"><i class="fas fa-bus"></i></div>
+        <div class="vehicle vehicle-3"><i class="fas fa-bus"></i></div>
+
+        <!-- Route Points -->
+        <div class="point point-1"></div>
+        <div class="point point-2"></div>
+        <div class="point point-3"></div>
+        <div class="point point-4"></div>
+        <div class="point point-5"></div>
+        <div class="point point-6"></div>
+
+        <!-- Pulse Locations -->
+        <div class="pulse-location loc-1"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="pulse-location loc-2"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="pulse-location loc-3"><i class="fas fa-map-marker-alt"></i></div>
     </div>
 
-    <div class="hero-image">
-        <img src="https://via.placeholder.com/300x600.png?text=App+Preview" alt="App Preview">
+    <!-- Content Overlay -->
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Navigate Nairobi with Confidence</h1>
+            <p>Access real-time matatu routes, locations, and schedules. Plan your journey efficiently with our comprehensive public transport data.</p>
+            <a href="{% url 'main:search' %}">
+                <button><i class="fas fa-search"></i> Search Routes</button>
+            </a>
+        </div>
     </div>
 </section>
-<section class="slider-section">
-  <div class="slider-text">
-      <h2>LOCATION HISTORY</h2>
-      <h1>Retrace your  past routes in a snap.</h1>
-      <a href="{% url 'main:map' %}">
-        <button>See all Location features &rarr;</button>
-    </a>
 
-      <div class="slider-controls">
-          <button id="prevSlide">&lt;</button>
-          <span id="slideIndicator">01</span> / 04
-          <button id="nextSlide">&gt;</button>
-      </div>
-  </div>
 
-  <div class="slider-image">
-      <img src="/mnt/data/direction section.png" alt="Slide 1" class="visible" id="slide1">
-      <img src="/mnt/data/SLIDE 2.png" alt="Slide 2" class="hidden" id="slide2">
-  </div>
+
+<!-- Map Visualization Section -->
+<section class="map-section">
+    <div class="section-text">
+        <h2>LOCATION HISTORY</h2>
+        <h1>Retrace your past routes in a snap.</h1>
+        <a href="{% url 'main:map' %}">
+            <button>See all Location features <i class="fas fa-arrow-right"></i></button>
+        </a>
+
+        <div class="map-controls">
+            <div class="control-group">
+                <button id="zoomIn"><i class="fas fa-plus"></i></button>
+                <button id="zoomOut"><i class="fas fa-minus"></i></button>
+            </div>
+            <div class="control-group">
+                <button id="showRoutes" class="active">Popular Routes</button>
+                <button id="showHeatmap">Traffic Density</button>
+                <button id="showStops">Matatu Stops</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-visualization">
+        <!-- Nairobi Map Container -->
+        <div class="nairobi-map">
+            <!-- Map Base Layer -->
+            <div class="map-base"></div>
+
+            <!-- Major Roads -->
+            <div class="map-roads">
+                <div class="road road-1"></div>
+                <div class="road road-2"></div>
+                <div class="road road-3"></div>
+                <div class="road road-4"></div>
+                <div class="road road-5"></div>
+                <div class="road road-6"></div>
+            </div>
+
+            <!-- Landmarks -->
+            <div class="landmarks">
+                <div class="landmark" style="top: 30%; left: 40%;">
+                    <i class="fas fa-building"></i>
+                    <span>CBD</span>
+                </div>
+                <div class="landmark" style="top: 20%; left: 60%;">
+                    <i class="fas fa-tree"></i>
+                    <span>Westlands</span>
+                </div>
+                <div class="landmark" style="top: 60%; left: 30%;">
+                    <i class="fas fa-university"></i>
+                    <span>Thika</span>
+                </div>
+                <div class="landmark" style="top: 70%; left: 70%;">
+                    <i class="fas fa-home"></i>
+                    <span>Juja</span>
+                </div>
+            </div>
+
+            <!-- Matatu Routes Layer -->
+            <div class="routes-layer">
+                <div class="route-path route-111" data-route="111">
+                    <div class="route-line"></div>
+                    <div class="route-vehicle">
+                        <i class="fas fa-bus"></i>
+                        <span>111</span>
+                    </div>
+                </div>
+                <div class="route-path route-125" data-route="125">
+                    <div class="route-line"></div>
+                    <div class="route-vehicle">
+                        <i class="fas fa-bus"></i>
+                        <span>125</span>
+                    </div>
+                </div>
+                <div class="route-path route-237" data-route="237">
+                    <div class="route-line"></div>
+                    <div class="route-vehicle">
+                        <i class="fas fa-bus"></i>
+                        <span>237</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stops Layer -->
+            <div class="stops-layer hidden">
+                <div class="stop" style="top: 35%; left: 42%;"></div>
+                <div class="stop" style="top: 38%; left: 45%;"></div>
+                <div class="stop" style="top: 42%; left: 48%;"></div>
+                <div class="stop" style="top: 25%; left: 55%;"></div>
+                <div class="stop" style="top: 30%; left: 58%;"></div>
+                <div class="stop" style="top: 55%; left: 35%;"></div>
+                <div class="stop" style="top: 58%; left: 32%;"></div>
+                <div class="stop" style="top: 65%; left: 65%;"></div>
+                <div class="stop" style="top: 68%; left: 68%;"></div>
+            </div>
+
+            <!-- Heatmap Layer -->
+            <div class="heatmap-layer hidden">
+                <div class="heatmap-point" style="top: 40%; left: 40%;"></div>
+                <div class="heatmap-point" style="top: 42%; left: 42%;"></div>
+                <div class="heatmap-point" style="top: 38%; left: 38%;"></div>
+                <div class="heatmap-point" style="top: 60%; left: 30%;"></div>
+                <div class="heatmap-point" style="top: 58%; left: 32%;"></div>
+                <div class="heatmap-point" style="top: 70%; left: 70%;"></div>
+            </div>
+
+            <!-- User Location -->
+            <div class="user-location">
+                <div class="pulse"></div>
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+
+            <!-- Route Info Popup -->
+            <div class="route-info">
+                <div class="info-header">
+                    <span class="route-number">111</span>
+                    <span class="route-name">CBD - Westlands</span>
+                </div>
+                <div class="info-body">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Every 10-15 min</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-money-bill-alt"></i>
+                        <span>KSh 50-80</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-road"></i>
+                        <span>7.5 km</span>
+                    </div>
+                </div>
+                <button class="info-button">View Details</button>
+            </div>
+        </div>
+    </div>
 </section>
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <h2>Our Key Features</h2>
-        <div class="features-container">
-            <div class="feature-item">
-                <h3>Location Sharing</h3>
-                <p>Always know where your family is with real-time location updates.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Driver Safety</h3>
-                <p>Get alerts on driving habits and ensure everyone's safety on the road.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Crash Detection</h3>
-                <p>Instant help in the event of a crash, with emergency support.</p>
-            </div>
+
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <h2>Our Key Features</h2>
+    <div class="features-container">
+        <div class="feature-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location Tracking</h3>
+            <p>Track matatus in real-time and get accurate arrival estimates.</p>
         </div>
-    </section>
-    <section class="real-life-stories">
-      <h1>Real Life Stories</h1>
-      <div class="story-container">
-        <div class="story-item">
-          <img src="/path/to/story-image1.jpg" alt="Story 1">
-          <h3>Keeping Families Connected</h3>
-          <p>digial matatu api helps me stay connected with my loved ones, even when we're apart. It gives me peace of mind knowing I can check on them anytime.</p>
-          <a href="#" class="read-more">Read More</a>
+        <div class="feature-item">
+            <i class="fas fa-route"></i>
+            <h3>Route Planning</h3>
+            <p>Find the most efficient routes with detailed information on connections and stops.</p>
         </div>
-        <div class="story-item">
-          <img src="/path/to/story-image2.jpg" alt="Story 2">
-          <h3>Navigating Busy Schedules</h3>
-          <p>With digial matatu api, I can easily coordinate with my family and never miss a beat. It's a lifesaver when we're all running in different directions.</p>
-          <a href="#" class="read-more">Read More</a>
+        <div class="feature-item">
+            <i class="fas fa-bell"></i>
+            <h3>Alerts & Notifications</h3>
+            <p>Receive updates about delays, route changes, and traffic conditions.</p>
         </div>
+    </div>
+</section>
+
+<!-- Real Life Stories Section -->
+<section class="real-life-stories">
+    <h1>Real Life Stories</h1>
+    <div class="story-container">
         <div class="story-item">
-          <img src="/path/to/story-image3.jpg" alt="Story 3">
-          <h3>Staying Safe on the Road</h3>
-          <p>digial matatu api has been a game-changer for me. It helps me keep track of my family's driving habits and provides valuable insights to improve our safety.</p>
-          <a href="#" class="read-more">Read More</a>
+            <i class="fas fa-user-friends"></i>
+            <h3>Keeping Commuters Connected</h3>
+            <p>Digital Matatu API helps me stay on schedule with my daily commute. It gives me peace of mind knowing exactly when my matatu will arrive.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
         <div class="story-item">
-          <img src="/path/to/story-image4.jpg" alt="Story 4">
-          <h3>Bringing Families Together</h3>
-          <p>digial matatu api has helped strengthen the bond with my family. We can easily stay connected and share moments, even when we're miles apart.</p>
-          <a href="#" class="read-more">Read More</a>
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Navigating Busy Schedules</h3>
+            <p>With Digital Matatu API, I can easily plan my trips and never miss an appointment. It's a lifesaver when navigating through Nairobi's busy streets.</p>
+            <a href="#" class="read-more">Read More</a>
         </div>
-      </div>
-      <div class="navigation-buttons">
-        <button class="prev-button">Previous</button>
-        <button class="next-button">Next</button>
-      </div>
-    </section>
-  
-    <section class="testimonials">
-      <h2>Loved by 66 million members and counting.</h2>
-      <div class="testimonial-container">
+        <div class="story-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Staying Safe on the Road</h3>
+            <p>Digital Matatu API has been a game-changer for me. It helps me track my journey and provides valuable insights to improve my travel safety.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="story-item">
+            <i class="fas fa-clock"></i>
+            <h3>Saving Time Every Day</h3>
+            <p>Digital Matatu API has helped me save hours each week by optimizing my routes. I can now spend more time with my family instead of waiting for transport.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+    </div>
+    <div class="navigation-buttons">
+        <button class="prev-button"><i class="fas fa-arrow-left"></i> Previous</button>
+        <button class="next-button">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>Trusted by thousands of commuters daily</h2>
+    <div class="testimonial-container">
         <div>
-          <img src="/path/to/avatar1.jpg" alt="Jessup">
-          <h3>Jessup</h3>
-          <p>I use digial matatu apibecause it lets me know when my family has left or gotten to school. It's important I know when my sisters and mom get home safely.</p>
+            <i class="fas fa-user-circle"></i>
+            <h3>James K.</h3>
+            <p>I use Digital Matatu API because it lets me know when my matatu is approaching. It's important I know the exact time to leave home to catch my ride.</p>
         </div>
         <div>
-          <img src="/path/to/avatar2.jpg" alt="Kris O.">
-          <h3>Kris O.</h3>
-          <p>The digial matatu api app made it possible for me to get directions to him quickly without having to give an address and me stopping to put it in. I was able to get to my fiancé because of Life360.</p>
+            <i class="fas fa-user-circle"></i>
+            <h3>Sarah M.</h3>
+            <p>The Digital Matatu API made it possible for me to navigate Nairobi efficiently as a newcomer. I was able to find my way around the city without getting lost.</p>
         </div>
         <div>
-          <img src="/path/to/avatar3.jpg" alt="Wes J.">
-          <h3>Wes J.</h3>
-          <p>We fully trust our kids, but we also want to protect them. This app is truly proactive when it comes to safety. This is the first time in the 20+ years of using a tech service that it actually worked better than advertised.</p>
+            <i class="fas fa-user-circle"></i>
+            <h3>David N.</h3>
+            <p>As a business owner, I need to be punctual for meetings. This app is truly proactive when it comes to planning my transport. It works better than I expected!</p>
         </div>
         <div>
-          <img src="/path/to/avatar4.jpg" alt="Brandi S.">
-          <h3>Brandi S.</h3>
-          <p>I am so thankful I could use digial matatu api to prove that I was being a good driver. I don't know what I would have done without it because I could barely remember what happened in the first place!</p>
+            <i class="fas fa-user-circle"></i>
+            <h3>Lucy W.</h3>
+            <p>I am so thankful I could use Digital Matatu API to find alternative routes during traffic jams. It has saved me countless hours of being stuck in traffic!</p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 matatu api. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact Us</a>
-            </div>
+<!-- Footer Section -->
+<footer id="contact">
+    <div class="footer-content">
+        <div>
+            <p>&copy; 2024 Digital Matatu API. All rights reserved.</p>
         </div>
-    </footer>
+        <div class="footer-links">
+            <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
 
-    
 
-  <script>
-      const slides = [
-          document.getElementById('slide1'),
-          document.getElementById('slide2')
-      ];
-      
-      let currentSlide = 0;
-
-      document.getElementById('prevSlide').addEventListener('click', () => {
-          slides[currentSlide].classList.remove('visible');
-          slides[currentSlide].classList.add('hidden');
-          currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
-          slides[currentSlide].classList.remove('hidden');
-          slides[currentSlide].classList.add('visible');
-          updateIndicator();
-      });
-
-      document.getElementById('nextSlide').addEventListener('click', () => {
-          slides[currentSlide].classList.remove('visible');
-          slides[currentSlide].classList.add('hidden');
-          currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
-          slides[currentSlide].classList.remove('hidden');
-          slides[currentSlide].classList.add('visible');
-          updateIndicator();
-      });
-
-      function updateIndicator() {
-          document.getElementById('slideIndicator').textContent = `0${currentSlide + 1}`;
-      }
-
-      // Add your own JavaScript code here to handle the "Real Life Stories" carousel
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const storyContainer = document.querySelector('.story-container');
-
-let currentIndex = 0;
-
-function showStories() {
-  storyContainer.style.transform = `translateX(-${currentIndex * 300}px)`;
-}
-
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    showStories();
-  }
-});
-
-nextButton.addEventListener('click', () => {
-  if (currentIndex < storyContainer.children.length - 1) {
-    currentIndex++;
-    showStories();
-  }
-});
-  </script>
 </body>
 </html>
+
