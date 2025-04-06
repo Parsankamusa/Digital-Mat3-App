@@ -80,11 +80,12 @@
 .history-timeline {
     position: relative;
     padding-left: 20px;
+    background-color: #00a693;
 }
 
 .history-timeline h3 {
     margin-bottom: 20px;
-    color: #333;
+    color: #0C0404;
 }
 
 .history-timeline::before {
@@ -94,7 +95,7 @@
     top: 40px;
     bottom: 0;
     width: 2px;
-    background-color: #e9ecef;
+    background-color: #ffffff;
 }
 
 .timeline-item {
@@ -117,25 +118,25 @@
 
 .timeline-date {
     font-weight: 600;
-    color: #1a73e8;
+    color: #0C0404;
     margin-bottom: 5px;
 }
 
 .timeline-content h4 {
     font-size: 1rem;
     margin-bottom: 5px;
-    color: #333;
+    color: #0C0404;
 }
 
 .timeline-content p {
     font-size: 0.9rem;
-    color: #666;
+    color: #FFFFFF;
     line-height: 1.4;
 }
 
 /* Landmarks Tab */
 .landmark-card {
-    background-color: #fff;
+    background-color: #00a693;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -164,7 +165,7 @@
 
 .landmark-info p {
     font-size: 0.9rem;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
@@ -176,8 +177,8 @@
 }
 
 .route-badge {
-    background-color: #e9ecef;
-    color: #333;
+    background-color: #2661bf;
+    color: #ffffff;
     font-size: 0.8rem;
     padding: 3px 8px;
     border-radius: 12px;
@@ -185,7 +186,7 @@
 
 .landmark-button {
     background-color: #1a73e8;
-    color: white;
+    color: #2661bf;
     border: none;
     padding: 8px 12px;
     border-radius: 4px;
@@ -1250,7 +1251,7 @@
 
 .trending-tag:hover {
     background-color: #1a73e8;
-    color: white;
+    color: #ffffff;
 }
 
 /* Landmark Icon */
